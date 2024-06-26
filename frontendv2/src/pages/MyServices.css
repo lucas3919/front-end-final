@@ -1,0 +1,114 @@
+.ms-page {
+  display: flex;
+  flex-direction: row;
+}
+.ms {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ms-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 4% 0%;
+}
+.ms-form {
+  width: 40%;
+}
+.ms-form input, .cs-form textarea {
+  padding: 5px;
+  background-color: #DDD;
+  border: 1px solid #000;
+  border-radius: 8px;
+  margin: 25px 0px;
+  padding: 10px;
+  font-size: 18px;
+}
+.ms-form button {
+  background-color: #227;
+  color: #FFF;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px 0px;
+  transition: 300ms;
+}
+.ms-form button:hover {
+  background-color: #84F;
+  cursor: pointer;
+}
+.ms-form > form {
+  display: flex;
+  flex-direction: column;
+}
+.ms-reset-text {
+  background: none !important;
+  border: none !important;
+  color: #AAA;
+  font-size: 24px;
+  text-decoration: underline;
+}
+a {
+  color: #84F;
+  transition: 300ms;
+}
+a:hover {
+  color: #227;
+}
+.ms-table-services {
+  display: block;
+  width: 75%;
+  height: 50%;
+  overflow: auto;
+  border: 1px solid #000;
+}
+.ms-table-services table {
+  display: block;
+  width: 100%;
+}
+.ms-table-services thead {
+  display: block;
+  width: 100%;
+}
+.ms-table-services tbody {
+  display: block;
+  width: 100%;
+}
+.ms-table-services tr {
+  text-align: center;
+  border: 2px solid #338;
+  display: block;
+  width: 100%;
+}
+.ms-table-services td {
+  width: 33%;
+}
+.ms-table-services td > button {
+  border: none;
+  background-color: #227;
+  color: #FFF;
+  padding: 2px;
+  border-radius: 2px;
+  transition: 300ms;
+}
+.ms-table-services td > button:hover {
+  cursor: pointer;
+  background-color: #84F;
+}
+.ms button {
+  background-color: #227;
+  color: #FFF;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px 0px;
+  transition: 300ms;
+}
+.ms button:hover {
+  background-color: #84F;
+  cursor: pointer;
+}

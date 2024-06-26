@@ -1,0 +1,94 @@
+.reg-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.reg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reg-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2% 0%;
+}
+
+.reg-form input,
+.reg-form select {
+  padding: 5px;
+  background-color: #DDD;
+  border: 1px solid #000;
+  border-radius: 8px;
+  margin: 25px 0px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.reg-form button {
+  background-color: #227;
+  color: #FFF;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px 0px;
+  transition: 300ms;
+}
+
+.reg-form button:hover {
+  background-color: #84F;
+  cursor: pointer;
+}
+
+.reg-form>form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.reg-reset-text {
+  background: none !important;
+  border: none !important;
+  color: #AAA;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+a {
+  color: #84F;
+  transition: 300ms;
+}
+
+a:hover {
+  color: #227;
+}
+
+.reg-submit-class {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-form-col>div {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0px 50px;
+}
+
+.reg-form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reg-errors {
+  color: red;
+}

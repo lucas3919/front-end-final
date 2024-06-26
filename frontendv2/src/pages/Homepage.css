@@ -1,0 +1,263 @@
+.nav {
+  background: #FFF;
+  padding: 25px;
+  display: flex;
+  color: #000;
+  justify-content: space-between;
+  align-items: center;
+}
+.link > a {
+  color: #000;
+  padding: 0px 15px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 500ms;
+}
+.link > a:hover {
+  color: #33A;
+}
+.img > img {
+  padding: 0px 0px 0px 50px;
+}
+.intro {
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+.intro > img {
+  width: 100%;
+}
+.intro-text {
+  height: 100%;
+  width: 75%;
+  padding: 0px 50px;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services {
+  display: block;
+  width: 50%;
+  margin: 100px 25%;
+}
+.services > h1 {
+  padding: 0px 50px;
+}
+.list-services {
+  border: 1px solid #FFF;
+  max-height: 500px;
+  overflow: auto;
+}
+.service {
+  background-color: #FFF;
+  padding: 10px;
+  color: #44C;
+  width: 90%;
+  display: block;
+  margin: 2.5%;
+  border-radius: 5px;
+}
+.service > p {
+  font-size: 24px;
+  margin: 10px 0px;
+}
+.service > button {
+  padding: 5px;
+  background-color: #338;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  transition: 300ms;
+}
+.service > button:hover {
+  background-color: #84F;
+  cursor: pointer;
+}
+.nav-services {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0px;
+}
+.nav-services button {
+  border: none;
+  background-color: #FFF;
+  color: #228;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 300ms;
+}
+.nav-services button:hover {
+  background-color: #84F;
+  color: #FFF;
+  cursor: pointer;
+}
+.mission {
+  padding: 0% 33%;
+  font-size: 18px;
+}
+.mission > h1 {
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 10px 0px;
+}
+.clients {
+  background-color: #FFF;
+  margin: 25px 0px;
+  padding: 25px;
+  color: #44C;
+}
+.clients img {
+  width: 100%;
+}
+.reviews {
+  padding: 25px;
+  margin: 25px 0px;
+}
+.reviews > h1 {
+  margin: 10px 50px;
+}
+.list-reviews {
+  display: flex;
+  flex-direction: row;
+}
+.review {
+  background-color: #FFF;
+  color: #44C;
+  padding: 25px;
+  font-size: 24px;
+  width: 45%;
+  margin: 0% 2.5%;
+}
+.foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3%;
+}
+.foot a {
+  color: #FFF;
+}
+.foot > div > span {
+  margin: 10px;
+}
+.frame-video {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+.frame-video > iframe {
+  border: none;
+}
+.gallery {
+  text-align: center;
+  width: 100%;
+}
+.gallery > div {
+  display: flex;
+  justify-content: center;
+}
+.gallery > div > img {
+  margin: 10px;
+  width: 20%;
+}
+.people-table {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+}
+.people-table > h1 {
+  text-align: center;
+  color: #FFF;
+  font-size: 32px;
+  margin: 25px;
+}
+.people-table > div {
+  display: flex;
+  justify-content: center;
+}
+.people-table table {
+  background-color: #FFF;
+  padding: 25px;
+  border-radius: 3px;
+}
+.people-table th {
+  font-weight: 700;
+  color: #44C;
+  min-width: 200px;
+  padding: 10px;
+}
+.people-table td {
+  color: #000;
+  text-align: center;
+  padding: 10px;
+}
+.people-table a {
+  color: #888;
+}
+.foot-payment > p {
+  text-align: right;
+}
+.cart-background {
+  position: fixed;
+  background-color: #33338877;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+.cart-block {
+  position: absolute;
+  left: 70%;
+  display: block;
+  width: 30%;
+  height: 100%;
+  background-color: #FFF;
+}
+.cart-inside {
+  padding: 50px;
+}
+.cart-list {
+  height: auto;
+  max-height: 500px;
+  display: block;
+  overflow: auto;
+  border: 1px solid #000;
+}
+.cart-block-in {
+  display: block;
+  border: 3px solid #338;
+  margin: 10px;
+  padding: 10px;
+  color: #338;
+}
+.cart-block-in > div {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-block button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #338;
+  color: #FFF;
+  min-width: 25px;
+  transition: 300ms;
+}
+.cart-block button:hover {
+  background-color: #85F;
+  cursor: pointer;
+}
+.cart-block-in span {
+  margin: 0px 10px;
+}
+.cart-inside > span {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 15px;
+}
