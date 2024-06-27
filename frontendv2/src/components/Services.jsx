@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Service from './Service.jsx';
 
 const Services = ({isLogged, addcart, listServices, loading}) => {
+  console.log(listServices);
   return (
     <div className="services">
       <div className="nav-services">
@@ -19,6 +20,7 @@ const Services = ({isLogged, addcart, listServices, loading}) => {
               description={o.descricao}
               price={o.valor}
               addcart={addcart}
+              paymentMethods={o.paymentMethod}
             />
           ))}
         </div>

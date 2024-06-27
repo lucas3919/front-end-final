@@ -4,16 +4,21 @@ import ErrorMessage from '../components/ErrorMessage.jsx';
 import logo from '../assets/images/Logo.png';
 import './CreateService.css';
 
-const CreateService = ({createService, waitForBackend}) => {
+const CreateService = ({createService, loggedWithUserId, waitForBackend}) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setData] = useState([]);
   const [allPayments, setAllPayments] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const [payload, setPayload] = useState({
+    paymentMethod: [],
+    id_cliente: loggedWithUserId
+  });
   
   const submit = (e) => {
     e.preventDefault();
     const eobj = Object.fromEntries(new FormData(e.target).entries());
-    createService(eobj);
+    createService(payload);
   }
 
   async function getPayment() {
@@ -47,13 +52,33 @@ const CreateService = ({createService, waitForBackend}) => {
     getPayment();
   }, [])
 
+  function setValue(name, value) {
+    const aux = payload;
+    
+    if(name == 'paymentMethod') {
+      aux['paymentMethod'].push(value);
+      console.log(value);
+    }else {
+      aux[name] = value;
+    }
+
+    setPayload(aux);
+  }
+
   function checkValue(value) {
 
+    setValue('valor', value.target.value)
     const newData = allPayments.filter((v) => {
       return value.target.value <= v.valor_maximo;
     })
 
     setData(newData);
+  }
+
+  function submitForm() {
+    console.log("payload", payload);
+    console.log("client", loggedWithUserId);
+    debugger;
   }
 
   return (
@@ -72,18 +97,18 @@ const CreateService = ({createService, waitForBackend}) => {
           <div className="cs-form">
             <form id="form" onSubmit={submit}>
               <p>Titulo</p>
-              <input type="text" name="titulo" id="title" required />
+              <input type="text" name="titulo" id="title" onChange={(e) => setValue('titulo', e.target.value)} required />
               <p>Valor (R$)</p>
               <input type="number" name="valor" id="value" onChange={(e) => checkValue(e)} required />
               {data.map(i => (
                 <div>
-                  <input type="checkbox" name="payment" value={i.id} id="payment" required/>
-                  <label for="payment">{i.nome}</label>
+                  <input type="checkbox" name="payment" value={i.id} id={i.nome} onChange={(e) => setValue('paymentMethod', e.target.value)} />
+                  <label for={i.nome}>{i.nome}</label>
                 </div>
               ))}
               <p>Descricao</p>
-              <textarea id="description" name="descricao" required />
-              <button disabled={waitForBackend}>Criar servico</button>
+              <textarea id="description" name="descricao" onChange={(e) => setValue('descricao', e.target.value)} required />
+              <button onClick={() => submitForm()}>Criar servico</button>
               <input type="reset" value="Limpar dados" className="cs-reset-text" />
             </form>
           </div>

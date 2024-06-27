@@ -1,6 +1,7 @@
 import CartBlock from './CartBlock.jsx';
 
 const Cart = ({closeWindow, finalizeBuy, value, amount, onAdd, onRemove}) => {
+  console.log(value);
   return (
     <div className="cart-background">
       <div className="cart-block">

@@ -35,6 +35,7 @@ const MyServices = ({loggedWithUserId, url}) => {
     if (res == null) return;
     setLoading(false);
     setData(res);
+    console.log("res", res);
   }
 
   useEffect(() => {
@@ -64,6 +65,7 @@ const MyServices = ({loggedWithUserId, url}) => {
                   <td>Codigo</td>
                   <td>Servico</td>
                   <td>Descricao</td>
+                  <td>Metodos de Pagamento</td>
                   <td>Valor Total</td>
                 </tr>
               </thead>
@@ -73,6 +75,7 @@ const MyServices = ({loggedWithUserId, url}) => {
                     <td>{i.id}</td>
                     <td>{i.titulo}</td>
                     <td>{i.descricao}</td>
+                    <td>{i.paymentMethod.join(', ')}</td>
                     <td>{i.valor}</td>
                   </tr>
                 ))}

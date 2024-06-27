@@ -185,7 +185,7 @@ function App() {
         <Route path="login" element={ <Login signIn={signIn} errorMessage={errorMessage} waitForBackend={waitForBackend} /> } />
         <Route path="forgot" element={ <ForgotPassword changePassword={changePassword} errorMessage={errorMessage}  waitForBackend={waitForBackend} /> } />
         <Route path="register" element={ <Register register={register} errorMessage={errorMessage} waitForBackend={waitForBackend} /> } />
-        <Route path="create" element={ <CreateService createService={createService} errorMessage={errorMessage} waitForBackend={waitForBackend} /> } />
+        <Route path="create" element={ <CreateService createService={createService} loggedWithUserId={loggedWithUserId.current} errorMessage={errorMessage} waitForBackend={waitForBackend} /> } />
         <Route path="PaymentCreate" element={ <CreatePayment createPayment={createPayment} errorMessage={errorMessage} waitForBackend={waitForBackend} /> } />
         <Route path="services" element={ <MyServices loggedWithUserId={loggedWithUserId.current} url={URL} /> } />
       </Routes>
