@@ -2,6 +2,8 @@ import sequelize from "../sequelize.js";
 import {Client} from './Client.js'
 
 import { DataTypes } from "sequelize";
+import { ServicosPaymentMethods } from "./ServicosPaymentMethods.js";
+import { PaymentMethod } from "./PaymentMethod.js";
 
 export const Service = sequelize.define('servicos', {
     titulo: DataTypes.STRING,
@@ -12,5 +14,3 @@ export const Service = sequelize.define('servicos', {
 }, {
     timestamps: false
 })
-
-Service.belongsTo(Client, { foreignKey: 'id_cliente' });

@@ -13,6 +13,10 @@ app.use(cors())
 
 app.use(express.json());
 
+Service.belongsToMany(PaymentMethod, { through: ServicosPaymentMethods, foreignKey: 'id_servico', as: 'paymentMethods' });
+PaymentMethod.belongsToMany(Service, { through: ServicosPaymentMethods, foreignKey: 'id_payment_method', as: 'services' });
+
+
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
     const client = await Client.findOne({ where: { email, senha } });
@@ -41,7 +45,25 @@ app.get('/clients', async (req, res) => {
 })
 
 app.get('/services', async (req, res) => {
-    const services = await Service.findAll();
+    let services = await Service.findAll({
+        include: {
+            model: PaymentMethod,
+            as: 'paymentMethods'
+        }
+    });
+
+    
+    services = services.map((service) => {
+        return {
+            id: service.id,
+            titulo: service.titulo,
+            valor: service.valor,
+            descricao: service.descricao,
+            id_cliente: service.id_cliente,
+            paymentMethod: service.paymentMethods.map((paymentMethod) => paymentMethod.nome)
+        }
+    
+    })
     res.send(services);
 })
 
@@ -60,13 +82,29 @@ app.post('/services', async (req, res) => {
     const { titulo, valor, descricao, id_cliente } = req.body;
     console.log({ titulo, valor, descricao, id_cliente })
     const service = await Service.create({ titulo, valor, descricao, id_cliente });
+    for(let i = 0; i < req.body.paymentMethod.length; i++) {
+        const paymentMethod = req.body.paymentMethod[i];
+        await ServicosPaymentMethods.create({ id_servico: service.id, id_payment_method: paymentMethod });
+    }
+    
     res.send(service);
 });
 
 app.get('/services/client/:id', async (req, res) => {
     const { id } = req.params;
-    const service = await Service.findAll({where: {id_cliente: id}});
-    res.send(service);
+    let services = await Service.findAll({where: {id_cliente: id}, include: {model: PaymentMethod, as: 'paymentMethods'}});
+    services = services.map((service) => {
+        return {
+            id: service.id,
+            titulo: service.titulo,
+            valor: service.valor,
+            descricao: service.descricao,
+            id_cliente: service.id_cliente,
+            paymentMethod: service.paymentMethods.map((paymentMethod) => paymentMethod.nome)
+        }
+    
+    })
+    res.send(services);
 })
 
 app.put('/services/:id', async (req, res) => {
